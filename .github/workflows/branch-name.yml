@@ -1,0 +1,14 @@
+name: Branch name
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  branch-name:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Branch Name
+        run: "${{ github.ref_name }}"
