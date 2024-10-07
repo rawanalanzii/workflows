@@ -9,9 +9,9 @@ jobs:
     outputs:
       name_output: ${{ steps.your-name.outputs.name }}
     steps:
-        - name: your name
-          id: your-name
-          run: "echo name=rawan >> $GITHUB_OUTPUT"
+      - name: your name
+        id: your-name
+        run: "echo name=rawan >> $GITHUB_OUTPUT"
 
   job2:
     needs: job1
@@ -19,4 +19,6 @@ jobs:
 
     steps:
       - name: job2
-        run: "echo Your name : ${{ needs.job1.outputs.name_output }}"
+        env:
+          YOUR_NAME: ${{ needs.job1.outputs.name_output }}
+        run: "echo Your name : $YOUR_NAME"
