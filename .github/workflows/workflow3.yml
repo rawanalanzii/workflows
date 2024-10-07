@@ -11,9 +11,7 @@ jobs:
     steps:
         - name: your name
           id: your-name
-        #   run: "echo : set-output name=name:Rawan"
-          run: echo "name=rawan" >> "$GITHUB_OUTPUT"
-
+          run: "echo name=rawan >> $GITHUB_OUTPUT"
 
   job2:
     needs: job1
