@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        - name: Branch Name
-          run: "echo currenct ${{ github.ref }}"
+        - name: Set Branch Name
+          env:
+            BRANCH_NAME: ${{ github.ref }}
+          run: |
+            echo "current branch : $BRANCH_NAME"
