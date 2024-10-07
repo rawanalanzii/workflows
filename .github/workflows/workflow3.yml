@@ -1,0 +1,24 @@
+name: workflow 3
+
+on:
+  push:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      name_output: ${{ steps.your-name.outputs.name }}
+    steps:
+        - name: your name
+          id: your-name
+        #   run: "echo : set-output name=name:Rawan"
+          run: echo "name=rawan" >> "$GITHUB_OUTPUT"
+
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: job2
+        run: "echo Your name : ${{ needs.job1.outputs.name_output }}"
