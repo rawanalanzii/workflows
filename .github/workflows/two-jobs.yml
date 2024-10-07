@@ -9,10 +9,15 @@ jobs:
 
     steps:
       - name: job1
-        run: "echo job 1"
+        env:
+          BRANCH_NAME: ${{ github.job }}
+        run: "echo : $BRANCH_NAME"
+
   job2:
     runs-on: ubuntu-latest
 
     steps:
       - name: job2
-        run: "echo job 2"
+        env:
+          BRANCH_NAME: ${{ github.job }}
+        run: "echo : $BRANCH_NAME"

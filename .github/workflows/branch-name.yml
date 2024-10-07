@@ -11,5 +11,4 @@ jobs:
         - name: Branch Name
           env:
             BRANCH_NAME: ${{ github.ref }}
-          run: |
-            echo "current branch : $BRANCH_NAME"
+          run: "echo current branch : $BRANCH_NAME"
