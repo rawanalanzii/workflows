@@ -2,8 +2,6 @@ name: Branch name
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   branch-name:
