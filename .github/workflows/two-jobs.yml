@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: job1
-        run: echo "job1"
+        run: echo "job 1"
   job2:
     runs-on: ubuntu-latest
 
     steps:
       - name: job2
-        run: echo "job2"
+        run: echo "job 2"
